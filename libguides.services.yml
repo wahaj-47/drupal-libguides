@@ -1,0 +1,11 @@
+services:
+  logger.channel.libguides:
+    parent: logger.channel_base
+    arguments: ["libguides"]
+
+  cache.api_proxy:
+    class: Drupal\Core\Cache\CacheBackendInterface
+    factory: cache_factory:get
+    arguments: ["api_proxy"]
+    tags:
+      - { name: cache.bin }

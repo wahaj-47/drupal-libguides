@@ -1,0 +1,3 @@
+views.filter.libguides_status:
+  type: views.filter.in_operator
+  label: "Libguides status"
