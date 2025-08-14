@@ -5,7 +5,8 @@ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Implements hook_help().
  */
-function libguides_help($route_name, RouteMatchInterface $route_match) {
+function libguides_help($route_name, RouteMatchInterface $route_match)
+{
   switch ($route_name) {
     case 'help.page.libguides':
       return t('
@@ -19,4 +20,21 @@ function libguides_help($route_name, RouteMatchInterface $route_match) {
   }
 }
 
-?>
+/**
+ * Implements hook_theme().
+ */
+function libguides_theme($existing, $type, $theme, $path)
+{
+  return [
+    'libguide' => [
+      'variables' => [
+        'name' => NULL,
+        'description' => NULL,
+        'url' => NULL,
+        'friendly_url' => NULL,
+        'search_term' => NULL,
+        'view' => NULL
+      ],
+    ],
+  ];
+}

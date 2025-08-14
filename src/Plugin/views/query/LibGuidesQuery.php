@@ -104,7 +104,8 @@ class LibGuidesQuery extends QueryPluginBase
                         '?sort_by=' . $this->sort_by .
                         '&search_terms=' . $this->search_terms .
                         '&search_match=' . $this->search_match .
-                        '&status=' . $this->status
+                        '&status=' . $this->status .
+                        '&expand=owner,subjects,tags',
                 ],
                 'absolute' => TRUE,
             ])->toString(TRUE)->getGeneratedUrl();
@@ -139,8 +140,10 @@ class LibGuidesQuery extends QueryPluginBase
                 $row['group_id'] = $guide['group_id'];
                 $row['url'] = $guide['url'];
                 $row['friendly_url'] = $guide['friendly_url'];
+                $row['search_term'] = $this->search_terms;
 
                 $row['index'] = $index++;
+
                 $view->result[] = new ResultRow($row);
             }
 

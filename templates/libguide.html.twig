@@ -1,0 +1,13 @@
+{#
+  Available variables 
+  - search_term: The search term that was sent with the query.
+  - name: The name of the LibGuide.
+  - description: A brief description of the LibGuide.
+  - url: The full URL to the LibGuide.
+  - friendly_url: The friendly URL slug for the LibGuide.
+#}
+
+<div class="libguide">
+  <h2><a href="{{ url }}">{{ name | highlight(search_term) }}</a></h2>
+  <div class="description">{{ description }}</div>
+</div>
