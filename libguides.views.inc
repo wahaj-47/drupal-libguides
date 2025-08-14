@@ -54,6 +54,8 @@ function libguides_views_data()
             'id' => 'standard',
         ],
     ];
+
+    // Owner
     $data['libguides_guides']['owner_id'] = [
         'title' => t('Owner ID'),
         'help' => t('Owner ID'),
@@ -61,6 +63,28 @@ function libguides_views_data()
             'id' => 'standard',
         ],
     ];
+    $data['libguides_guides']['owner_first_name'] = [
+        'title' => t('Owner First Name'),
+        'help' => t('Owner First Name'),
+        'field' => [
+            'id' => 'standard',
+        ],
+    ];
+    $data['libguides_guides']['owner_last_name'] = [
+        'title' => t('Owner Last Name'),
+        'help' => t('Owner Last Name'),
+        'field' => [
+            'id' => 'standard',
+        ],
+    ];
+    $data['libguides_guides']['owner_email'] = [
+        'title' => t('Owner Email'),
+        'help' => t('Owner Email'),
+        'field' => [
+            'id' => 'standard',
+        ],
+    ];
+
     $data['libguides_guides']['name'] = [
         'title' => t('Name'),
         'help' => t('Guide name.'),
@@ -131,6 +155,22 @@ function libguides_views_data()
     $data['libguides_guides']['friendly_url'] = [
         'title' => t('Friendly URL'),
         'help' => t('Guide friendly URL'),
+        'field' => [
+            'id' => 'standard',
+        ],
+    ];
+
+    // Metadata
+    $data['libguides_guides']['tags'] = [
+        'title' => t('Tags'),
+        'help' => t('Tags'),
+        'field' => [
+            'id' => 'standard',
+        ],
+    ];
+    $data['libguides_guides']['subjects'] = [
+        'title' => t('Subjects'),
+        'help' => t('Subjects'),
         'field' => [
             'id' => 'standard',
         ],

@@ -130,6 +130,9 @@ class LibGuidesQuery extends QueryPluginBase
                 $row['type_id'] = $guide['type_id'];
                 $row['site_id'] = $guide['site_id'];
                 $row['owner_id'] = $guide['owner_id'];
+                $row['owner_first_name'] = $guide['owner']['first_name'];
+                $row['owner_last_name'] = $guide['owner']['last_name'];
+                $row['owner_email'] = $guide['owner']['email'];
                 $row['name'] = $guide['name'];
                 $row['description'] = $guide['description'];
                 $row['status'] = $guide['status'];
@@ -140,6 +143,8 @@ class LibGuidesQuery extends QueryPluginBase
                 $row['group_id'] = $guide['group_id'];
                 $row['url'] = $guide['url'];
                 $row['friendly_url'] = $guide['friendly_url'];
+                $row['tags'] = isset($guide['tags']) ? implode(', ', array_column($guide['tags'], 'text')) : "";
+                $row['subjects'] = isset($guide['subjects']) ? implode(', ', array_column($guide['subjects'], 'name')) : "";
                 $row['search_term'] = $this->search_terms;
 
                 $row['index'] = $index++;

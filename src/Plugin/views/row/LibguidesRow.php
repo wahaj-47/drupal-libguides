@@ -25,8 +25,13 @@ class LibguidesRow extends RowPluginBase
             '#theme' => 'libguide',
             '#name' => $row->name,
             '#description' => $row->description,
+            '#owner_first_name' => $row->owner_first_name,
+            '#owner_last_name' => $row->owner_last_name,
+            '#owner_email' => $row->owner_email,
             '#url' => $row->url,
             '#friendly_url' => $row->friendly_url,
+            '#tags' => $row->tags,
+            '#subjects' => $row->subjects,
             '#search_term' => $row->search_term,
             '#view' => $this->view,
         ];
