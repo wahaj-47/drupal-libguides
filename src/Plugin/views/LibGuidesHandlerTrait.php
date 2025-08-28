@@ -11,7 +11,7 @@ trait LibGuidesHandlerTrait
      * Retrieves the query plugin.
      *
      * @return \Drupal\libguides\Plugin\views\query\LibGuidesQuery|null
-     *   The query plugin, or NULL if there is no query or it is no Search API
+     *   The query plugin, or NULL if there is no query or it is not LibguidesQuery
      *   query.
      */
     public function getQuery()
