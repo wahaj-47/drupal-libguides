@@ -128,9 +128,9 @@ class LibGuidesQuery extends QueryPluginBase
 
             $offset = $view->getOffset();
             $items_per_page = $view->getItemsPerPage();
-            $currentPage = $view->getCurrentPage();
+            $current_page = $view->getCurrentPage();
 
-            $data = array_slice($data, $offset + ($currentPage * $items_per_page), $items_per_page);
+            $data = array_slice($data, $offset + ($current_page * $items_per_page), $items_per_page);
 
             $index = 0;
             foreach ($data as $guide) {
