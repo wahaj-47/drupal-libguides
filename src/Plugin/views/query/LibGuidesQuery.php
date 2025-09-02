@@ -95,6 +95,14 @@ class LibGuidesQuery extends QueryPluginBase
     /**
      * {@inheritdoc}
      */
+    public function build(ViewExecutable $view)
+    {
+        $view->initPager();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function execute(ViewExecutable $view)
     {
         try {
