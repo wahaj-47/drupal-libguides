@@ -5,9 +5,16 @@
   - description: A brief description of the LibGuide.
   - url: The full URL to the LibGuide.
   - friendly_url: The friendly URL slug for the LibGuide.
+  - owner_first_name: Owner first name
+  - owner_last_name: Owner last name
+  - owner_email: Owner email
+  - tags: Comma separated list of LibGuide tags
+  - subjects: Comma separated list of LibGuide subjects
 #}
 
 <div class="libguide">
-  <h2><a href="{{ url }}">{{ name | highlight(search_term) }}</a></h2>
-  <div class="description">{{ description }}</div>
+	<h2>
+		<a href="{{ url }}">{{ name | highlight(search_term) }}</a>
+	</h2>
+	<div class="description">{{ description }}</div>
 </div>
