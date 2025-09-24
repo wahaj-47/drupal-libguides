@@ -41,6 +41,11 @@ class LibGuidesQuery extends QueryPluginBase
     protected $logger;
 
     /**
+     * To silence the warning: Creation of dynamic property $where is deprecated
+     */
+    protected $where;
+
+    /**
      * Search terms
      * 
      * @var string|null
