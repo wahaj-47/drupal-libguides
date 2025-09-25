@@ -96,11 +96,6 @@ final class LibGuidesApiProxy extends HttpApiPluginBase
             '#title' => $this->t('Client Secret'),
             '#default_value' => $this->configuration['client_secret'] ?? "",
         ];
-        $form['auth_endpoint'] = [
-            '#type' => 'textfield',
-            '#title' => $this->t('Auth endpoint'),
-            '#default_value' => $this->configuration['auth_endpoint'] ?? "",
-        ];
 
         return $form;
     }
@@ -146,9 +141,7 @@ final class LibGuidesApiProxy extends HttpApiPluginBase
 
         $client_id = $this->getConfiguration()['client_id'];
         $client_secret = $this->getConfiguration()['client_secret'];
-        $uri = $this->getConfiguration()['auth_endpoint'];
-        $parsed_uri = UrlHelper::parse($uri);
-        $endpoint = rtrim($this->getBaseUrl(), '/') . '/' . ltrim($parsed_uri['path'], '/');
+        $endpoint = rtrim($this->getBaseUrl(), '/') . '/oauth/token';
 
         $psr7_response = $this->client->request(
             'post',
