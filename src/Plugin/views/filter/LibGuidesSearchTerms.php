@@ -4,14 +4,14 @@ namespace Drupal\libguides\Plugin\views\filter;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\libguides\Plugin\views\LibGuidesHandlerTrait;
-use Drupal\views\Plugin\views\filter\FilterPluginBase;
+use Drupal\views\Plugin\views\filter\BooleanOperator;
 
 /**
  * Filter by searching guide name and description. When sort_by=relevance is specified, the full-text index is searched.
  * 
  * @ViewsFilter("libguides_search_terms")
  */
-class LibGuidesSearchTerms extends FilterPluginBase
+class LibGuidesSearchTerms extends BooleanOperator
 {
     use LibGuidesHandlerTrait;
 
@@ -96,9 +96,8 @@ class LibGuidesSearchTerms extends FilterPluginBase
     public function query()
     {
         $query = $this->getQuery();
-
         // Pass any data you need to your query plugin.
-        $query->search_terms = reset($this->value);
+        $query->search_terms = $this->value;
         $query->search_match = $this->operator;
     }
 }
